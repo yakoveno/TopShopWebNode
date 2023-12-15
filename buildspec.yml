@@ -1,0 +1,23 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 20
+
+  pre_build:
+    commands:
+      - npm install
+      - npm prune --production
+
+  build:
+    commands:
+      - zip -r lambda-package.zip *
+
+  post_build:
+    commands:
+      - aws lambda update-function-code --function-name TopShopNode --zip-file fileb://./lambda-package.zip
+
+artifacts:
+  files: lambda-package.zip
+  base-directory: ./
