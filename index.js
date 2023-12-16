@@ -1,9 +1,9 @@
 const mysql = require('mysql2/promise');
 
 const pool = mysql.createPool({
-    host: 'topshopdata.crfsiym6xaya.eu-central-1.rds.amazonaws.com',
-    user: 'TopShopAdmin',
-    password: 'Un!0n1Ds6*w69i#EEs',
+
+
+
     database: 'store_online',
     port: '3306',
     waitForConnections: true,
